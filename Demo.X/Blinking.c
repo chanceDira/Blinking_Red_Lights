@@ -2,7 +2,7 @@
  * File:   Blinking.c
  * Author: PANEL TECH
  *
- * Created on July 18, 2021, 1:01 AM
+ * Created on July 20, 2021, 11:01 AM
  */
 
 // CONFIG
@@ -21,39 +21,28 @@
 #include <xc.h>
 #define _XTAL_FREQ 8000000
 void main(void) {
-//    TRISD=0b00000000;
-//    while(1){
-//         PORTDbits.RD0=1;
-//        __delay_ms(1000);
-//        
-//        PORTDbits.RD0=0;
-//        __delay_ms(1000);
-//    }
     
-    TRISD = 0x00;
+     TRISD = 0x00;
     PORTD = 0x00; // port d
 
 while (1)
 {
 	PORTDbits.RD0 = 1;
-	__delay_ms(1000);
+	__delay_ms(800);
 	PORTDbits.RD0 = 0;
 
     PORTDbits.RD2 = 1;
-	__delay_ms(1000);
+	__delay_ms(800);
 	PORTDbits.RD2 = 0;
     
 	PORTDbits.RD1 = 1;
-	__delay_ms(1000);
+	__delay_ms(800);
 	PORTDbits.RD1 = 0;
-
 
 //	PORTDbits.RD0 = 1;
 //	__delay_ms(2000);
 //	PORTDbits.RD0 = 0;
 } 
-    
-         
     
     return;
 }

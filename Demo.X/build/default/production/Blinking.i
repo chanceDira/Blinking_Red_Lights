@@ -1741,31 +1741,28 @@ extern __bank0 __bit __timeout;
 
 
 void main(void) {
-# 33 "Blinking.c"
-    TRISD = 0x00;
+
+     TRISD = 0x00;
     PORTD = 0x00;
 
 while (1)
 {
  PORTDbits.RD0 = 1;
- _delay((unsigned long)((1000)*(8000000/4000.0)));
+ _delay((unsigned long)((800)*(8000000/4000.0)));
  PORTDbits.RD0 = 0;
 
     PORTDbits.RD2 = 1;
- _delay((unsigned long)((1000)*(8000000/4000.0)));
+ _delay((unsigned long)((800)*(8000000/4000.0)));
  PORTDbits.RD2 = 0;
 
  PORTDbits.RD1 = 1;
- _delay((unsigned long)((1000)*(8000000/4000.0)));
+ _delay((unsigned long)((800)*(8000000/4000.0)));
  PORTDbits.RD1 = 0;
 
 
 
 
-
 }
-
-
 
     return;
 }

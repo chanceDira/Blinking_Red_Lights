@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Sun Jul 18 05:39:04 2021
+                                                                                               Tue Jul 20 11:19:01 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F877A
@@ -242,27 +242,27 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    228                           ; Regs used in _main: [wreg+status,2]
    229                           
    230                           
-   231                           ;Blinking.c: 33:     TRISD = 0x00;
+   231                           ;Blinking.c: 25:      TRISD = 0x00;
    232  07BF  1683               	bsf	3,5	;RP0=1, select bank1
    233  07C0  1303               	bcf	3,6	;RP1=0, select bank1
    234  07C1  0188               	clrf	8	;volatile
    235                           
-   236                           ;Blinking.c: 34:     PORTD = 0x00;
+   236                           ;Blinking.c: 26:     PORTD = 0x00;
    237  07C2  1283               	bcf	3,5	;RP0=0, select bank0
    238  07C3  1303               	bcf	3,6	;RP1=0, select bank0
    239  07C4  0188               	clrf	8	;volatile
    240  07C5                     l610:
    241                           
-   242                           ;Blinking.c: 37: {;Blinking.c: 38:  PORTDbits.RD0 = 1;
+   242                           ;Blinking.c: 29: {;Blinking.c: 30:  PORTDbits.RD0 = 1;
    243  07C5  1408               	bsf	8,0	;volatile
    244  07C6                     l612:
    245                           
-   246                           ;Blinking.c: 39:  _delay((unsigned long)((1000)*(8000000/4000.0)));
-   247  07C6  300B               	movlw	11
+   246                           ;Blinking.c: 31:  _delay((unsigned long)((800)*(8000000/4000.0)));
+   247  07C6  3009               	movlw	9
    248  07C7  00F2               	movwf	??_main+2
-   249  07C8  3026               	movlw	38
+   249  07C8  301E               	movlw	30
    250  07C9  00F1               	movwf	??_main+1
-   251  07CA  305D               	movlw	93
+   251  07CA  30E4               	movlw	228
    252  07CB  00F0               	movwf	??_main
    253  07CC                     u17:
    254  07CC  0BF0               	decfsz	??_main,f
@@ -271,25 +271,25 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    257  07CF  2FCC               	goto	u17
    258  07D0  0BF2               	decfsz	??_main+2,f
    259  07D1  2FCC               	goto	u17
-   260  07D2  2FD3               	nop2
+   260  07D2  0000               	nop
    261  07D3                     l614:
    262                           
-   263                           ;Blinking.c: 40:  PORTDbits.RD0 = 0;
+   263                           ;Blinking.c: 32:  PORTDbits.RD0 = 0;
    264  07D3  1283               	bcf	3,5	;RP0=0, select bank0
    265  07D4  1303               	bcf	3,6	;RP1=0, select bank0
    266  07D5  1008               	bcf	8,0	;volatile
    267  07D6                     l616:
    268                           
-   269                           ;Blinking.c: 42:     PORTDbits.RD2 = 1;
+   269                           ;Blinking.c: 34:     PORTDbits.RD2 = 1;
    270  07D6  1508               	bsf	8,2	;volatile
    271  07D7                     l618:
    272                           
-   273                           ;Blinking.c: 43:  _delay((unsigned long)((1000)*(8000000/4000.0)));
-   274  07D7  300B               	movlw	11
+   273                           ;Blinking.c: 35:  _delay((unsigned long)((800)*(8000000/4000.0)));
+   274  07D7  3009               	movlw	9
    275  07D8  00F2               	movwf	??_main+2
-   276  07D9  3026               	movlw	38
+   276  07D9  301E               	movlw	30
    277  07DA  00F1               	movwf	??_main+1
-   278  07DB  305D               	movlw	93
+   278  07DB  30E4               	movlw	228
    279  07DC  00F0               	movwf	??_main
    280  07DD                     u27:
    281  07DD  0BF0               	decfsz	??_main,f
@@ -298,25 +298,25 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    284  07E0  2FDD               	goto	u27
    285  07E1  0BF2               	decfsz	??_main+2,f
    286  07E2  2FDD               	goto	u27
-   287  07E3  2FE4               	nop2
+   287  07E3  0000               	nop
    288  07E4                     l620:
    289                           
-   290                           ;Blinking.c: 44:  PORTDbits.RD2 = 0;
+   290                           ;Blinking.c: 36:  PORTDbits.RD2 = 0;
    291  07E4  1283               	bcf	3,5	;RP0=0, select bank0
    292  07E5  1303               	bcf	3,6	;RP1=0, select bank0
    293  07E6  1108               	bcf	8,2	;volatile
    294  07E7                     l622:
    295                           
-   296                           ;Blinking.c: 46:  PORTDbits.RD1 = 1;
+   296                           ;Blinking.c: 38:  PORTDbits.RD1 = 1;
    297  07E7  1488               	bsf	8,1	;volatile
    298  07E8                     l624:
    299                           
-   300                           ;Blinking.c: 47:  _delay((unsigned long)((1000)*(8000000/4000.0)));
-   301  07E8  300B               	movlw	11
+   300                           ;Blinking.c: 39:  _delay((unsigned long)((800)*(8000000/4000.0)));
+   301  07E8  3009               	movlw	9
    302  07E9  00F2               	movwf	??_main+2
-   303  07EA  3026               	movlw	38
+   303  07EA  301E               	movlw	30
    304  07EB  00F1               	movwf	??_main+1
-   305  07EC  305D               	movlw	93
+   305  07EC  30E4               	movlw	228
    306  07ED  00F0               	movwf	??_main
    307  07EE                     u37:
    308  07EE  0BF0               	decfsz	??_main,f
@@ -325,10 +325,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    311  07F1  2FEE               	goto	u37
    312  07F2  0BF2               	decfsz	??_main+2,f
    313  07F3  2FEE               	goto	u37
-   314  07F4  2FF5               	nop2
+   314  07F4  0000               	nop
    315  07F5                     l626:
    316                           
-   317                           ;Blinking.c: 48:  PORTDbits.RD1 = 0;
+   317                           ;Blinking.c: 40:  PORTDbits.RD1 = 0;
    318  07F5  1283               	bcf	3,5	;RP0=0, select bank0
    319  07F6  1303               	bcf	3,6	;RP1=0, select bank0
    320  07F7  1088               	bcf	8,1	;volatile
@@ -446,7 +446,7 @@ DATA                 0      0       0      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Sun Jul 18 05:39:04 2021
+Symbol Table                                                                                   Tue Jul 20 11:19:01 2021
 
                      u17 07CC                       u27 07DD                       u37 07EE  
                     l610 07C5                      l620 07E4                      l612 07C6  
